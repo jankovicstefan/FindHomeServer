@@ -1,0 +1,25 @@
+extends layout
+
+block content
+ 
+  div.col-md-4
+  div.col-md-4
+    h1= title
+    form.form-group(action='/locations/add' ,method='post')
+      label(for='Longitude') Longitude
+      input#Longitude.form-control.input-sm(name='longitude' type='text', placeholder='Longitudet')
+      label(for='Latitude') Latitude
+      input#Latitude.form-control.input-sm(name='latitude' type='text', placeholder='Latitude')
+      label(for='Type') Type
+      //- input#Type.form-control.input-sm(name='type' type='text', placeholder='Type')
+      select#Type.form-control(name='type')
+        option(value='Rent') For Rent
+        option(value='Sale') For Sale
+      label(for='Price') Price
+      input#Price.form-control.input-sm(name='price' type='text', placeholder='Price')
+      label(for='Number') Number
+      input#Number.form-control.input-sm(name='num' type='text', placeholder='Number')
+      label(for='Description') Description
+      textarea#Price.form-control.input-sm(name='desc' type='text', placeholder='Description...' rows='5')
+      br
+      button.btn.btn-success.btn-block(type='submit',value='submit') Add
